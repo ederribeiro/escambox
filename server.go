@@ -1,11 +1,11 @@
-package server
+package main
 
 import (
 	"fmt"
 	"log"
 	"net/http"
 	"encoding/json"
-	"github.com/ederribeiro/escambox/model"
+	"github.com/ederribeiro/escambox/model/product"
 )
 
 

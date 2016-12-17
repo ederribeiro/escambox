@@ -1,4 +1,4 @@
-package product
+package Product
 
 type Product struct {
 	Title string `json:Title`
