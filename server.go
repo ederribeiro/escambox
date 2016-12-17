@@ -1,18 +1,12 @@
-package main
+package server
 
 import (
 	"fmt"
 	"log"
 	"net/http"
 	"encoding/json"
+	"github.com/ederribeiro/escambox/model"
 )
-
-type Product struct {
-	Title string `json:Title`
-	Description string `json:Description`
-}
-
-type Products []Product
 
 
 func homePage(w http.ResponseWriter, r *http.Request) {
@@ -21,6 +15,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func returnProduct(w http.ResponseWriter, r *http.Request) {
+
 	product := Product{Title: "Camisa", Description: "Camisa azul"}
 	fmt.Println("Endpoint Hit: returnProduct")
 	json.NewEncoder(w).Encode(product)
