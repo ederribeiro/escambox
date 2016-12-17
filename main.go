@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 	"encoding/json"
-	"./src/models"
+	"github.com/ederribeiro/escambox/src/models"
 )
 
 
@@ -15,7 +15,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func returnProduct(w http.ResponseWriter, r *http.Request) {
-	product := &models.Product{Title: "Camisa", Description: "Camisa azul"}
+	product := &models.Product{title: "Camisa", description: "Camisa azul"}
 	fmt.Println("Endpoint Hit: returnProduct")
 	json.NewEncoder(w).Encode(product)
 }

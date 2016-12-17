@@ -1,6 +1,7 @@
 package models
 
 type Product struct {
-    Title string
-    Description string
+    title string
+    description string
+    image string
 }
