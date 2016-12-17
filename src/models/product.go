@@ -1,7 +1,8 @@
 package models
 
 type Product struct {
-    title string
-    description string
-    image string
+    ID          string `json:"id,omitempty"`
+    Title       string `json:"title,omitempty"`
+    Description string `json:"description,omitempty"`
+    Image       string `json:"image,omitempty"`
 }

@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"encoding/json"
+
+    "github.com/gorilla/mux"
 	"github.com/ederribeiro/escambox/src/models"
 )
 
@@ -14,16 +16,16 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: homePage")
 }
 
-func returnProduct(w http.ResponseWriter, r *http.Request) {
-	product := &models.Product{title: "Camisa", description: "Camisa azul"}
+func getProducts(w http.ResponseWriter, r *http.Request) {
+	product := &models.Product{Title: "Camisa", Description: "Camisa azul"}
 	fmt.Println("Endpoint Hit: returnProduct")
 	json.NewEncoder(w).Encode(product)
 }
 
 func handleRequests() {
-	http.HandleFunc("/", homePage)
-	http.HandleFunc("/product", returnProduct)
-    log.Fatal(http.ListenAndServe(":8081", nil))
+	router := mux.NewRouter()
+	router.HandleFunc("/product", getProducts).Methods("GET")
+    log.Fatal(http.ListenAndServe(":8081", router))
 }
 
 func main() {
