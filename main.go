@@ -15,5 +15,5 @@ func main() {
 	// Routes handling
  	s.HandleFunc("/products", pc.Index).Methods("GET")
 	http.Handle("/", r)
- 	log.Fatal(http.ListenAndServe(":8080", nil))
+ 	log.Fatal(http.ListenAndServe(":4040", nil))
 }

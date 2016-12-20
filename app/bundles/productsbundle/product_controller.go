@@ -14,6 +14,6 @@ func (c *ProductController) Index(w http.ResponseWriter, r *http.Request) {
 		w,
 		r,
 		[]*Product{New("Tênis", "Lindo Tênis")},
-	    http.StatusOK
+	    http.StatusOK,
 	)
 }
