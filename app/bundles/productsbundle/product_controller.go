@@ -10,10 +10,5 @@ type ProductController struct {
 }
 
 func (c *ProductController) Index(w http.ResponseWriter, r *http.Request) {
-	c.SendJSON(
-		w,
-		r,
-		[]*Product{New("Tênis", "Lindo Tênis")},
-	    http.StatusOK,
-	)
+	c.SendJSON(w,r,[]*Product{New("Tênis", "Lindo Tênis")},http.StatusOK)
 }
